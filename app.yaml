@@ -1,0 +1,35 @@
+application: dangkythongtin
+runtime: php72
+api_version: 1
+
+handlers:
+
+- url: /bootstrap
+  static_dir: bootstrap
+
+- url: /libs
+  static_dir: libs
+
+- url: /image
+  static_dir: image
+
+- url: /h2.png
+  static_files: image/h2.png
+  upload: image/h2.png
+
+- url: /
+  script: index.php
+
+- url: /index\.php
+  script: index.php
+
+- url: /dangky\.php
+  script: dangky.php
+
+- url: /export_pdf\.php
+  script: export_pdf.php
+
+env_variables:
+  MYSQL_DSN: "mysql:host=172.17.0.2;dbname=dangky_info"
+  MYSQL_USER: root
+  MYSQL_PASSWORD: root
